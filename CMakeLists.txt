@@ -47,6 +47,7 @@ option(WITHOUT_TEST_SERVER_EXTPOLL "Don't build the test server version that use
 option(WITHOUT_TEST_PING "Don't build the ping test application" OFF)
 option(WITHOUT_TEST_CLIENT "Don't build the client test application" OFF)
 option(WITHOUT_TEST_FRAGGLE "Don't build the ping test application" OFF)
+option(WITHOUT_TEST_MASSENKARAMBOLAGE "Don't build the Autobahn test application" OFF)
 option(WITHOUT_DEBUG "Don't compile debug related code" OFF)
 option(WITHOUT_EXTENSIONS "Don't compile with extensions" OFF)
 option(WITH_LATENCY "Build latency measuring code into the library" OFF)
@@ -642,6 +643,14 @@ if (NOT WITHOUT_TESTAPPS)
 				""
 				"${WIN32_HELPERS_PATH}/unistd.h;${WIN32_HELPERS_PATH}/sys/time.h")
 		endif()
+
+        if (NOT WITHOUT_TEST_MASSENKARAMBOLAGE AND NOT WIN32)
+            create_test_app(test-massenkarambolage
+                "test-server/test-massenkarambolage.c"
+                ""
+                "${WIN32_HELPERS_PATH}/unistd.h;${WIN32_HELPERS_PATH}/sys/time.h")
+        endif()
+
 
 		#
 		# test-ping

@@ -1,0 +1,16 @@
+{
+   "options": { "failByDrop": false },
+   "outdir": "./test-reports/massenkarambolage",
+
+   "servers": [ {
+        "agent" : "AutobahnServer",
+        "url" : "ws://localhost:7681",
+        "options" : {
+            "version": 18
+        }
+    } ],
+
+   "cases": [ "1.2*", "2.*", "3.*", "4.*", "5.*" ],
+   "exclude-cases": [ ],
+   "exclude-agent-cases": { }
+}

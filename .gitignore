@@ -52,6 +52,7 @@ RPM/
 bin/
 doc/
 share/
+test-reports/
 
 # browsing tools
 cscope.in.out
