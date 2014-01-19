@@ -1,11 +1,12 @@
 #Ignore build files
 Makefile
 config.h
+lws_config.h
 config.log
 config.status
 libtool
 stamp-h1
-output/
+
 win32port/ipch/
 win32port/Debug*/
 win32port/Release*/
@@ -37,3 +38,32 @@ ltmain.sh
 config.sub
 ar-lib
 libwebsockets.pc
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+CPackConfig.cmake
+CPackSourceConfig.cmake
+cmake_install.cmake
+
+# Output directories
+output/
+RPM/
+bin/
+doc/
+share/
+
+# browsing tools
+cscope.in.out
+cscope.out
+cscope.po.out
+tags
+
+# Binaries
+lib/*.a
+lib/*.so
+lib/*.so.*
+
+# Test utilities
+libwebsockets-test-server.key.pem
+libwebsockets-test-server.pem
