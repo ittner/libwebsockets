@@ -420,8 +420,16 @@ bail:
 		fprintf(stderr, "Received network connect from %s (%s)\n",
 							client_name, client_ip);
 #endif
+		libwebsocket_set_timeout(wsi,
+			PENDING_TIMEOUT_ESTABLISH_WITH_SERVER, 10);
+
 		/* if we returned non-zero from here, we kill the connection */
 		break;
+
+	case LWS_CALLBACK_FILTER_PROTOCOL_CONNECTION:
+		libwebsocket_set_timeout(wsi, NO_PENDING_TIMEOUT, 0);
+		break;
+
 
 #ifdef EXTERNAL_POLL
 	/*
